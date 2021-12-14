@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./style.css" />
+		<script src="./calc.js" defer></script>
+		<script src="./players.js" defer></script>
+		<script src="./main.js" defer></script>
+		<title>Document</title>
+	</head>
+	<body>
+		<header>
+			<p class="hide"><a href="index.html">Press here to go again!</a></p>
+		</header>
+		<main>
+			<div class="container">
+				<table>
+					<tr class="data-row">
+						<th>PLAYER</th>
+						<td class="player1 name" contenteditable="true">P1</td>
+						<td class="player2 name" contenteditable="true">P2</td>
+					</tr>
+					<tr class="score-row">
+						<th>Ones</th>
+						<td class="player1 ones"></td>
+						<td class="player2 ones"></td>
+					</tr>
+					<tr class="score-row">
+						<th>Twos</th>
+						<td class="player1 twos"></td>
+						<td class="player2 twos"></td>
+					</tr>
+					<tr class="score-row">
+						<th>Threes</th>
+						<td class="player1 threes"></td>
+						<td class="player2 threes"></td>
+					</tr>
+					<tr class="score-row">
+						<th>Fours</th>
+						<td class="player1 fours"></td>
+						<td class="player2 fours"></td>
+					</tr>
+					<tr class="score-row">
+						<th>Fives</th>
+						<td class="player1 fives"></td>
+						<td class="player2 fives"></td>
+					</tr>
+					<tr class="score-row">
+						<th>Sixes</th>
+						<td class="player1 sixes"></td>
+						<td class="player2 sixes"></td>
+					</tr>
+					<tr class="data-row">
+						<th>TOTAL</th>
+						<td class="player1 upperTotal"></td>
+						<td class="player2 upperTotal"></td>
+					</tr>
+					<tr class="data-row">
+						<th>BONUS</th>
+						<td class="player1 bonus"></td>
+						<td class="player2 bonus"></td>
+					</tr>
+					<tr class="score-row">
+						<th>Pair</th>
+						<td class="player1 pair"></td>
+						<td class="player2 pair"></td>
+					</tr>
+					<tr class="score-row">
+						<th>Two pair</th>
+						<td class="player1 twoPair"></td>
+						<td class="player2 twoPair"></td>
+					</tr>
+					<tr class="score-row">
+						<th>3 of a kind</th>
+						<td class="player1 threeOfAKind"></td>
+						<td class="player2 threeOfAKind"></td>
+					</tr>
+					<tr class="score-row">
+						<th>4 of a kind</th>
+						<td class="player1 fourOfAKind"></td>
+						<td class="player2 fourOfAKind"></td>
+					</tr>
+					<tr class="score-row">
+						<th>Small straight</th>
+						<td class="player1 smallStraight"></td>
+						<td class="player2 smallStraight"></td>
+					</tr>
+					<tr class="score-row">
+						<th>Large straight</th>
+						<td class="player1 largeStraight"></td>
+						<td class="player2 largeStraight"></td>
+					</tr>
+					<tr class="score-row">
+						<th>Full house</th>
+						<td class="player1 fullHouse"></td>
+						<td class="player2 fullHouse"></td>
+					</tr>
+					<tr class="score-row">
+						<th>Chance</th>
+						<td class="player1 chance"></td>
+						<td class="player2 chance"></td>
+					</tr>
+					<tr class="score-row">
+						<th>Yatzy</th>
+						<td class="player1 yatzy"></td>
+						<td class="player2 yatzy"></td>
+					</tr>
+					<tr class="data-row">
+						<th>TOTAL</th>
+						<td class="player1 grandTotal"></td>
+						<td class="player2 grandTotal"></td>
+					</tr>
+				</table>
+				<aside>
+					<div class="dice-container">
+						<img
+							id="dice0"
+							class="un-hold"
+							src="./img/dice1.svg"
+							alt="dice"
+						/>
+						<img
+							id="dice1"
+							class="un-hold"
+							src="./img/dice2.svg"
+							alt="dice"
+						/>
+						<img
+							id="dice2"
+							class="un-hold"
+							src="./img/dice3.svg"
+							alt="dice"
+						/>
+						<img
+							id="dice3"
+							class="un-hold"
+							src="./img/dice4.svg"
+							alt="dice"
+						/>
+						<img
+							id="dice4"
+							class="un-hold"
+							src="./img/dice5.svg"
+							alt="dice"
+						/>
+					</div>
+					<button id="rollDice">Roll dice</button>
+					<button id="nextRound" disabled>Next round</button>
+				</aside>
+			</div>
+		</main>
+	</body>
+</html>

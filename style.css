@@ -1,0 +1,186 @@
+:root {
+	font-size: 62.5%;
+	--box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+		rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+	--border: 1px solid rgb(226, 226, 226);
+	--dark-green: rgb(0, 121, 0);
+	--light-blue: rgba(111, 190, 255, 0.582);
+	--dark-blue: rgb(0, 69, 180);
+	--light-green: rgba(0, 170, 0, 0.383);
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: "Open Sans", sans-serif;
+	font-size: 1.6rem;
+}
+
+header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: var(--light-green);
+}
+
+header p {
+	text-align: center;
+	padding: 1.6em 0;
+}
+
+a {
+	color: black;
+}
+
+main {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+aside {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border: var(--border);
+	padding: 1.3em;
+	box-shadow: var(--box-shadow);
+}
+
+button {
+	box-sizing: border-box;
+	padding: 0.9em 0;
+	cursor: pointer;
+	border: none;
+	border-radius: 5px;
+}
+
+#rollDice {
+	background: var(--light-blue);
+	color: var(--dark-blue);
+	border: 1px solid var(--dark-blue);
+}
+
+#nextRound {
+	background: var(--light-green);
+	color: var(--dark-green);
+	border: 1px solid var(--dark-green);
+}
+
+#rollDice:disabled,
+#nextRound:disabled {
+	color: rgb(167, 167, 167);
+	cursor: auto;
+	background: rgba(0, 0, 0, 0.041);
+	border: 1px solid transparent;
+}
+
+table {
+	border-collapse: collapse;
+	margin-right: 2em;
+	box-shadow: var(--box-shadow);
+}
+
+th,
+td {
+	border: var(--border);
+	padding: 0.3em 0.5em;
+	min-width: 3em;
+	text-align: center;
+	background: transparent;
+	pointer-events: none;
+}
+
+th {
+	text-align: left;
+}
+
+.container {
+	display: flex;
+}
+
+.dice-container {
+	width: 8rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.dice-container img {
+	margin-top: 1em;
+	width: 100%;
+	cursor: pointer;
+}
+
+.dice-container img:first-of-type {
+	margin-top: 0;
+}
+
+.data-row {
+	background: rgba(0, 0, 0, 0.041);
+}
+
+.rotate {
+	animation: rotation 0.4s ease-in-out 1;
+}
+
+@keyframes rotation {
+	0% {
+		opacity: 0;
+		transform: rotate(0deg) scale(0);
+	}
+	/* 50% {
+		opacity: 0.5;
+		transform: rotate(720deg);
+	} */
+	100% {
+		opacity: 1;
+		transform: rotate(720deg) scale(1);
+	}
+}
+
+/* STATES */
+.in-active {
+	pointer-events: none;
+}
+
+.active,
+.no-points,
+.chosen {
+	transition: background-color 0.3s;
+}
+
+.active {
+	background: var(--light-blue);
+	pointer-events: unset;
+	cursor: pointer;
+}
+
+.no-points {
+	background: rgba(255, 0, 0, 0.3);
+}
+
+.chosen {
+	background: var(--light-green);
+}
+
+.hold {
+	filter: opacity(0.4);
+	transform: scale(0.8);
+	transition: all 0.2s;
+}
+
+.un-hold {
+	filter: opacity(1);
+	transform: scale(1);
+	transition: all 0.2s;
+}
+
+.hide {
+	display: none;
+}
