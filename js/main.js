@@ -48,8 +48,21 @@ diceImgs.forEach((diceImg) => {
 		if (rollsLeft < 3 && rollsLeft > 0) {
 			event.target.classList.toggle("hold");
 			event.target.classList.toggle("un-hold");
-			const diceIndex = parseInt(event.target.id.substring(4));
+			const diceIndex = parseInt(
+				event.target.classList.value.split(" ")[0][4]
+			);
 			diceArray[diceIndex].hold = !diceArray[diceIndex].hold;
+		}
+		let numberOfHeldDice = 0;
+		diceArray.forEach((dice) => {
+			if (dice.hold === true) {
+				numberOfHeldDice++;
+			}
+		});
+		if (numberOfHeldDice === 5) {
+			rollDiceButton.setAttribute("disabled", true);
+		} else {
+			rollDiceButton.removeAttribute("disabled");
 		}
 	});
 });

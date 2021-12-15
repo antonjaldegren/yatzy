@@ -3,7 +3,7 @@ function rollDice() {
 	for (let i = 0; i < diceArray.length; i++) {
 		if (!diceArray[i].hold) {
 			diceArray[i].value = Math.floor(Math.random() * 6) + 1;
-			const diceElement = document.querySelector(`#dice${i}`);
+			const diceElement = document.querySelector(`.dice${i}`);
 			diceElement.setAttribute(
 				"src",
 				`./img/dice${diceArray[i].value}.svg`
@@ -16,7 +16,6 @@ function rollDice() {
 	diceValues = diceArray.map((dice) => dice.value).sort((a, b) => a - b);
 	occurances = getOccurances();
 	numbers = Object.keys(occurances);
-
 	rollsLeft--;
 	if (rollsLeft === 0) {
 		rollDiceButton.setAttribute("disabled", true);
