@@ -1,0 +1,111 @@
+header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+header p {
+	padding: 1.6em 0;
+}
+
+main {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+aside {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 1.3em;
+	border: var(--border);
+	box-shadow: var(--box-shadow);
+}
+
+button {
+	padding: 0.9em 0;
+	border: var(--border);
+	border-radius: 7px;
+	transition: var(--transition);
+}
+
+table {
+	border-collapse: collapse;
+	margin-right: 2em;
+	box-shadow: var(--box-shadow);
+}
+
+th,
+td {
+	border: var(--border);
+	padding: 0.3em 0.5em;
+	min-width: 3em;
+	pointer-events: none;
+}
+
+.container {
+	display: flex;
+}
+
+.dice-container {
+	width: 8rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.dice-container img {
+	margin-top: 1em;
+	width: 100%;
+}
+
+.dice-container img:first-of-type {
+	margin-top: 0;
+}
+
+.rotate {
+	animation: rotation 0.4s ease-in-out 1;
+}
+
+@keyframes rotation {
+	0% {
+		opacity: 0;
+		transform: rotate(0deg) scale(0);
+	}
+	100% {
+		opacity: 1;
+		transform: rotate(720deg) scale(1);
+	}
+}
+
+/* STATES */
+.active,
+.no-points,
+.chosen,
+.hold,
+.un-hold {
+	transition: var(--transition);
+}
+.in-active {
+	pointer-events: none;
+}
+
+.active {
+	pointer-events: unset;
+}
+
+.hold {
+	filter: opacity(0.4);
+	transform: scale(0.8);
+}
+
+.un-hold {
+	filter: opacity(1);
+	transform: scale(1);
+}
+
+.hide {
+	display: none;
+}

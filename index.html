@@ -4,15 +4,24 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- GOOGLE FONTS -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
 			rel="stylesheet"
 		/>
-		<link rel="stylesheet" href="./style.css" />
+		<!-- CUSTOM CSS -->
+		<link rel="stylesheet" href="./css/reset.css" />
+		<link rel="stylesheet" href="./css/variables.css" />
+		<link rel="stylesheet" href="./css/typography.css" />
+		<link rel="stylesheet" href="./css/colors.css" />
+		<link rel="stylesheet" href="./css/index.css" />
+		<!-- JAVASCRIPT -->
+		<script src="./js/data.js" defer></script>
 		<script src="./js/calc.js" defer></script>
 		<script src="./js/players.js" defer></script>
+		<script src="./js/game.js" defer></script>
 		<script src="./js/main.js" defer></script>
 		<title>YATZY</title>
 	</head>
@@ -152,8 +161,8 @@
 							alt="dice"
 						/>
 					</div>
-					<button id="rollDice">Roll dice</button>
-					<button id="nextRound" disabled>Next round</button>
+					<button class="roll-dice">Roll dice</button>
+					<button class="next-round" disabled>Next round</button>
 				</aside>
 			</div>
 		</main>

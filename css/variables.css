@@ -1,0 +1,15 @@
+:root {
+	--border: 1px solid var(--clr-dark-grey);
+	--transition: all 0.2s ease-in-out;
+	--box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+		rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+	--clr-black: rgb(41, 41, 41);
+	--clr-red: rgba(255, 0, 0, 0.3);
+	--clr-light-green: rgba(0, 170, 0, 0.383);
+	--clr-dark-green: rgb(0, 121, 0);
+	--clr-light-blue: rgba(111, 190, 255, 0.582);
+	--clr-dark-blue: rgb(0, 69, 180);
+	--clr-light-grey: rgba(0, 0, 0, 0.041);
+	--clr-dark-grey: rgb(202, 202, 202);
+}

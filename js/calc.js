@@ -4,7 +4,6 @@ function getOccurances() {
 		{}
 	);
 }
-
 function getOnes() {
 	let sum = 0;
 	diceValues.forEach((value) => {
@@ -61,7 +60,7 @@ function getSixes() {
 }
 function getUpperTotal() {
 	let upperTotal = 0;
-	lowerScoreKeys.forEach((key) => {
+	upperScoreKeys.forEach((key) => {
 		upperTotal += currentPlayer.scores[key].value;
 	});
 	return upperTotal;
@@ -86,39 +85,35 @@ function getPair() {
 	return foundPairSums.sort((a, b) => a - b)[foundPairSums.length - 1];
 }
 function getTwoPair() {
-	const occurances = getOccurances();
 	let numberOfPairs = 0;
-	let sum = 0;
-	for (const number in occurances) {
+	let twoPairSum = 0;
+	numbers.forEach((number) => {
 		if (occurances[number] === 2 || occurances[number] === 3) {
 			numberOfPairs++;
-			sum += parseInt(number) * 2;
-		} else if (occurances[number] >= 4) {
-			return parseInt(number) * 4;
+			twoPairSum += parseInt(number) * 2;
 		}
-	}
+	});
 	if (numberOfPairs === 2) {
-		return sum;
+		return twoPairSum;
 	}
-	return 0;
 }
 function getThreeOfAKind() {
-	const occurances = getOccurances();
-	for (const number in occurances) {
+	let sum = 0;
+	numbers.forEach((number) => {
 		if (occurances[number] >= 3) {
-			return parseInt(number) * 3;
+			sum = parseInt(number) * 3;
 		}
-	}
-	return 0;
+	});
+	return sum;
 }
 function getFourOfAKind() {
-	const occurances = getOccurances();
-	for (const number in occurances) {
+	let sum = 0;
+	numbers.forEach((number) => {
 		if (occurances[number] >= 4) {
-			return parseInt(number) * 4;
+			sum = parseInt(number) * 4;
 		}
-	}
-	return 0;
+	});
+	return sum;
 }
 function getSmallStraight() {
 	const smallStraight = [1, 2, 3, 4, 5];
@@ -131,6 +126,7 @@ function getSmallStraight() {
 }
 function getLargeStraight() {
 	const largeStraight = [2, 3, 4, 5, 6];
+
 	for (let i = 0; i < diceValues.length; i++) {
 		if (diceValues[i] !== largeStraight[i]) {
 			return 0;
@@ -139,20 +135,18 @@ function getLargeStraight() {
 	return 20;
 }
 function getFullHouse() {
-	const occurances = getOccurances();
-	for (const number in occurances) {
+	let sum = 0;
+	numbers.forEach((number) => {
 		if (occurances[number] === 3) {
 			const threeOfAKindSum = parseInt(number) * 3;
-			for (const number in occurances) {
+			numbers.forEach((number) => {
 				if (occurances[number] === 2) {
-					return threeOfAKindSum + parseInt(number) * 2;
+					sum = threeOfAKindSum + parseInt(number) * 2;
 				}
-			}
-		} else if (occurances[number] === 5) {
-			return parseInt(number) * 5;
+			});
 		}
-	}
-	return 0;
+	});
+	return sum;
 }
 function getChance() {
 	let sum = 0;
@@ -171,8 +165,8 @@ function getYatzy() {
 }
 function getGrandTotal() {
 	let grandTotal = 0;
-	for (const score in currentPlayer.scores) {
+	scoreKeys.forEach((score) => {
 		grandTotal += currentPlayer.scores[score].value;
-	}
+	});
 	return grandTotal + currentPlayer.bonus.value;
 }

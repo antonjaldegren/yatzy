@@ -1,0 +1,48 @@
+body,
+a {
+	color: var(--clr-black);
+}
+
+header {
+	background: var(--clr-light-green);
+}
+
+th,
+td {
+	background: transparent;
+}
+
+.data-row {
+	background: var(--clr-light-grey);
+}
+
+.active {
+	background: var(--clr-light-blue);
+}
+
+.no-points {
+	background: var(--clr-red);
+}
+
+.chosen {
+	background: var(--clr-light-green);
+}
+
+.roll-dice {
+	background: var(--clr-light-blue);
+	color: var(--clr-dark-blue);
+	border-color: var(--clr-dark-blue);
+}
+
+.next-round {
+	background: var(--clr-light-green);
+	color: var(--clr-dark-green);
+	border-color: var(--clr-dark-green);
+}
+
+.roll-dice:disabled,
+.next-round:disabled {
+	color: var(--clr-dark-grey);
+	background: var(--clr-light-grey);
+	border-color: var(--clr-dark-grey);
+}
