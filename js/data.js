@@ -30,7 +30,7 @@ let diceArray = [
 	{ value: null, hold: false },
 ];
 
-let roundsLeft = 10;
+let roundsLeft = 30;
 let rollsLeft = 3;
 let diceValues = [];
 let occurances = {};
