@@ -7,11 +7,20 @@ body {
 	font-size: 1.6rem;
 }
 
+table {
+}
+
 header p,
-td {
+td,
+small {
 	text-align: center;
 }
 
 th {
+	font-weight: 400;
 	text-align: left;
+}
+
+.current-player {
+	font-weight: 900;
 }

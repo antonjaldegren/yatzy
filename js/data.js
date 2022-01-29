@@ -1,8 +1,9 @@
 const headerParagraph = document.querySelector("header p");
 const scoreRows = document.querySelectorAll(".score-row");
-const nextRoundButton = document.querySelector(".next-round");
+const doneButton = document.querySelector(".done");
 const rollDiceButton = document.querySelector(".roll-dice");
 const diceImgs = document.querySelectorAll(".dice-container img");
+const rollsLeftSpan = document.querySelector(".rolls-left");
 const upperScoreKeys = ["ones", "twos", "threes", "fours", "fives", "sixes"];
 const scoreKeys = [
 	"ones",

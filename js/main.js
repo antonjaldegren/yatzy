@@ -4,16 +4,16 @@ scoreRows.forEach((row) =>
 		if (!event.target.classList.contains("chosen")) {
 			resetChosenScore();
 			event.target.classList.add("chosen");
-			nextRoundButton.removeAttribute("disabled");
+			doneButton.removeAttribute("disabled");
 		} else {
 			resetChosenScore();
 		}
 	})
 );
 
-nextRoundButton.addEventListener("click", () => {
+doneButton.addEventListener("click", () => {
 	setScoreValues();
-	nextRoundButton.setAttribute("disabled", true);
+	doneButton.setAttribute("disabled", true);
 	roundsLeft--;
 	resetCurrentPlayerColumn();
 	resetDice();
@@ -34,8 +34,6 @@ nextRoundButton.addEventListener("click", () => {
 		return;
 	}
 	toggleCurrentPlayer();
-	rollDice();
-	activatePossibleChoices();
 });
 
 rollDiceButton.addEventListener("click", () => {

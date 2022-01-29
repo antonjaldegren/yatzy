@@ -8,7 +8,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
 			rel="stylesheet"
 		/>
 		<!-- CUSTOM CSS -->
@@ -34,7 +34,12 @@
 				<table>
 					<tr class="data-row">
 						<th>PLAYER</th>
-						<td class="player1 name" contenteditable="true">P1</td>
+						<td
+							class="player1 name current-player before-roll"
+							contenteditable="true"
+						>
+							P1
+						</td>
 						<td class="player2 name" contenteditable="true">P2</td>
 					</tr>
 					<tr class="score-row">
@@ -156,8 +161,9 @@
 							alt="dice"
 						/>
 					</div>
+					<small>Rolls left: <span class="rolls-left">3</span></small>
 					<button class="roll-dice">Roll dice</button>
-					<button class="next-round" disabled>Next round</button>
+					<button class="done" disabled>Done</button>
 				</aside>
 			</div>
 		</main>

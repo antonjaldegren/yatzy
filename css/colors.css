@@ -34,15 +34,23 @@ td {
 	border-color: var(--clr-dark-blue);
 }
 
-.next-round {
+.done {
 	background: var(--clr-light-green);
 	color: var(--clr-dark-green);
 	border-color: var(--clr-dark-green);
 }
 
 .roll-dice:disabled,
-.next-round:disabled {
+.done:disabled {
 	color: var(--clr-dark-grey);
 	background: var(--clr-light-grey);
 	border-color: var(--clr-dark-grey);
+}
+
+.name {
+	color: var(--clr-dark-grey);
+}
+
+.current-player {
+	color: var(--clr-black);
 }

@@ -1,5 +1,6 @@
 const player1 = {
 	name: "player1",
+	playerCell: document.querySelector(".name.player1"),
 	scores: {
 		ones: {
 			value: null,
@@ -95,6 +96,7 @@ const player1 = {
 };
 const player2 = {
 	name: "player2",
+	playerCell: document.querySelector(".name.player2"),
 	scores: {
 		ones: {
 			value: null,

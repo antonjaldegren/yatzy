@@ -1,4 +1,7 @@
 function rollDice() {
+	rollDiceButton.setAttribute("disabled", true);
+	if (rollsLeft === 3)
+		currentPlayer.playerCell.classList.remove("before-roll");
 	resetChosenScore();
 	for (let i = 0; i < diceArray.length; i++) {
 		if (!diceArray[i].hold) {
@@ -17,8 +20,12 @@ function rollDice() {
 	occurances = getOccurances();
 	numbers = Object.keys(occurances);
 	rollsLeft--;
-	if (rollsLeft === 0) {
-		rollDiceButton.setAttribute("disabled", true);
+	rollsLeftSpan.textContent = rollsLeft;
+	if (rollsLeft > 0) {
+		setTimeout(() => {
+			rollDiceButton.removeAttribute("disabled");
+		}, 700);
+	} else {
 		diceImgs.forEach((diceImg) => diceImg.classList.add("in-active"));
 		resetDiceHold();
 	}
@@ -29,13 +36,15 @@ function resetDice() {
 	rollDiceButton.removeAttribute("disabled");
 	diceImgs.forEach((diceImg) => diceImg.classList.remove("in-active"));
 	rollsLeft = 3;
+	rollsLeftSpan.textContent = rollsLeft;
 }
 
 function resetDiceHold() {
 	diceArray.forEach((dice) => (dice.hold = false));
 	diceImgs.forEach((diceImg) => {
-		diceImg.classList.remove("hold");
-		diceImg.classList.add("un-hold");
+		diceImg.classList.replace("hold", "un-hold");
+		// diceImg.classList.remove("hold");
+		// diceImg.classList.add("un-hold");
 	});
 }
 
@@ -68,18 +77,20 @@ function resetCurrentPlayerColumn() {
 }
 
 function toggleCurrentPlayer() {
+	currentPlayer.playerCell.classList.remove("current-player", "before-roll");
 	if (currentPlayer === player1) {
 		currentPlayer = player2;
 	} else {
 		currentPlayer = player1;
 	}
+	currentPlayer.playerCell.classList.add("current-player", "before-roll");
 }
 
 function resetChosenScore() {
 	document
 		.querySelectorAll(`.${currentPlayer.name}`)
 		.forEach((element) => element.classList.remove("chosen"));
-	nextRoundButton.setAttribute("disabled", true);
+	doneButton.setAttribute("disabled", true);
 }
 
 function getChosenScoreKey(element) {
