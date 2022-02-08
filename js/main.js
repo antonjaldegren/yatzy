@@ -5,7 +5,9 @@ scoreRows.forEach((row) =>
 			resetChosenScore();
 			event.target.classList.add("chosen");
 			doneButton.removeAttribute("disabled");
+			rollDiceButton.setAttribute("disabled", true);
 		} else {
+			rollDiceButton.removeAttribute("disabled");
 			resetChosenScore();
 		}
 	})
