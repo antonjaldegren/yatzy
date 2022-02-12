@@ -3,6 +3,7 @@ function rollDice() {
 	if (rollsLeft === 3)
 		currentPlayer.playerCell.classList.remove("before-roll");
 	resetChosenScore();
+
 	for (let i = 0; i < diceArray.length; i++) {
 		if (!diceArray[i].hold) {
 			diceArray[i].value = Math.floor(Math.random() * 6) + 1;
@@ -16,11 +17,13 @@ function rollDice() {
 			diceElement.classList.add("rotate");
 		}
 	}
+
 	diceValues = diceArray.map((dice) => dice.value).sort((a, b) => a - b);
 	occurances = getOccurances();
 	numbers = Object.keys(occurances);
 	rollsLeft--;
 	rollsLeftSpan.textContent = rollsLeft;
+
 	if (rollsLeft > 0) {
 		setTimeout(() => {
 			rollDiceButton.removeAttribute("disabled");
@@ -52,6 +55,7 @@ function activatePossibleChoices() {
 	for (const score in currentPlayer.scores) {
 		const element = currentPlayer.scores[score].element;
 		const currentValue = currentPlayer.scores[score].getScore();
+
 		if (currentPlayer.scores[score].value === null) {
 			element.classList.add("active");
 			if (currentValue > 0) {
@@ -69,6 +73,7 @@ function resetCurrentPlayerColumn() {
 	document.querySelectorAll(`.${currentPlayer.name}`).forEach((row) => {
 		row.classList.remove("active", "no-points", "chosen");
 	});
+
 	for (const score in currentPlayer.scores) {
 		if (currentPlayer.scores[score].value === null) {
 			currentPlayer.scores[score].element.textContent = "";

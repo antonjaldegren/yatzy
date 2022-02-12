@@ -7,7 +7,7 @@ scoreRows.forEach((row) =>
 			doneButton.removeAttribute("disabled");
 			rollDiceButton.setAttribute("disabled", true);
 		} else {
-			rollDiceButton.removeAttribute("disabled");
+			rollsLeft > 0 && rollDiceButton.removeAttribute("disabled");
 			resetChosenScore();
 		}
 	})
